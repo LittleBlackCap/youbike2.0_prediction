@@ -1,5 +1,6 @@
 
-import json, ssl, urllib.request, mariadb, requests, time, datetime
+import json, ssl, urllib.request, mariadb, requests, time
+from datetime import datetime
 
 
 def getStationStatus():    
@@ -69,7 +70,9 @@ def getStationStatus():
                         VALUES (%s, %s, %s, %s, %s, %s, %s, %s);
                     """.format(tableName)
 
-                    
+                    # 若本站牌暫時無使用中近期都不須載入了
+                    if (element["act"] == 0):
+                        continue
 
                     if (city == cities[0]): # Taipei
                         cursor.execute(
@@ -142,7 +145,7 @@ def getStationStatus():
 def loop():
     while True:
         print()
-        print("The current date and time is", datetime.now())
+        print(datetime.now())
         getStationStatus()
         time.sleep(600)
         

@@ -1,0 +1,34 @@
+# 創造虛擬環境
+python -m venv venv
+
+# 啟動虛擬環境
+.\venv\Scripts\activate
+# 關閉虛擬環境
+deactivate
+
+# 開啟虛擬伺服器
+cd C:\Users\User\gitlab_forMyrel\myrel\Django
+.\venv\Scripts\activate
+python manage.py runserver
+# 測試
+python manage.py test
+
+
+# 將已安裝的套件列表顯示
+pip freeze > requirements.txt
+# 安裝所需套件
+pip install -r requirements.txt
+
+
+#gitlab 指令部份
+1.首先要在本地端開一個資料夾(空的)
+2.對他按右鍵，點git bash here
+3.git clone <HTTP網址>
+4.打開你的資料夾，可以進行更改
+5.git status 查看你改了什麼
+6.git add .  將全部檔案加入暫存(add和.之間有空白)
+7.git commit -m "你的註解"
+8.git remote  查看已建立的遠端主機(理論上是origin)
+    git remote -v 查看更詳細的內容
+9.git remote update <遠端主機名稱> -p 將本地端紀錄的分支資訊和遠端上的分支資訊同步
+10.git push <遠端主機名稱> <遠端分支名稱> 我們分支是main

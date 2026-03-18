@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouBike Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        YouBike 即時地圖
+    </header>
+
+    <div id="control">
+        
+        <label for="citySelect">城市：</label>
+        <select id="citySelect" name="citySelect">
+            <option value="taipei">台北</option>
+            <option value="taichung">台中</option>
+            <option value="kaohsiung">高雄</option>
+        </select>
+
+        <br><label for="modeSelect">顯示方式：</label>
+        <select id="modeSelect" name="modeSelect">
+            <option value="all">顯示全部站點</option>
+            <option value="center">固定市中心</option>
+        </select>
+
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <!-- 感覺這裡沒載好 -->
+</body>
+</html>
